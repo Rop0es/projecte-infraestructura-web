@@ -36,4 +36,4 @@ Captures demostració
 
 <img width="380" height="93" alt="image" src="https://github.com/user-attachments/assets/95a558b3-d2e0-463f-abc1-6c7a473e623f" />
 
-<img width="370" height="90" alt="image" src="https://github.com/user-attachments/assets/79d81cf2-89de-4993-a15e-c57d14af9b50" />
+
