@@ -2,30 +2,8 @@ Documentacio del Projecte d'Infraestructura Web
 Aquest projecte desplega una arquitectura web escalable
 mitjançant Docker, amb un proxy invers i balanceig de
 carrega en una xarxa aïllada.
-+-----------------------+
-          |    Usuari Extern      |
-          |    (Port 80)          |
-          +-----------+-----------+
-                      |
-                      v
-        +-------------+-------------+
-        |    Proxy Invers (Nginx)   |
-        |    Load Balancer          |
-        +-------------+-------------+
-                      |
-        +-------------+-------------+
-        |  Xarxa Interna (Aillada)  |
-        +----------+----------+-----+
-                   |          |
-        +----------v---+  +---v----------+
-        |  Backend 1   |  |  Backend 2   |
-        +----------+---+  +---+----------+
-                   |          |
-                   +----+-----+
-                        |
-              +---------v---------+
-              |  Volum Compartit  |
-              +-------------------+
+
+<img width="391" height="559" alt="image" src="https://github.com/user-attachments/assets/e1472984-6b8c-493d-a19c-9ffea149f131" />
 
 
 Disseny i Decisions Tecniques
