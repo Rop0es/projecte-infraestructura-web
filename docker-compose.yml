@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  reverse_proxy:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - xarxa_interna
+    depends_on:
+      - web_backend_1
+      - web_backend_2
+
+  web_backend_1:
+    image: nginx:latest
+    volumes:
+      - ./web-content:/usr/share/nginx/html:ro
+    networks:
+      - xarxa_interna
+    # No exposem ports al host, només accessibles per la xarxa_interna
+
+  web_backend_2:
+    image: nginx:latest
+    volumes:
+      - ./web-content:/usr/share/nginx/html:ro
+    networks:
+      - xarxa_interna
+
+networks:
+  xarxa_interna:
+    driver: bridge
