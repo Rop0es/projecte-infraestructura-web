@@ -27,11 +27,7 @@ Verificar l'estat
 docker compose ps
 
 Verificar el balanceig (PowerShell)
-for ($i=1; $i -le 6; $i++) {
-$r = Invoke-WebRequest -Uri "http://localhost" -Method Head
-$s = $r.Headers["X-Backend-Server"]
-Write-Host "Peticio $i: Backend $s"
-}
+curl -I http://localhost | Select-String "X-Backend-Server"
 
 Captures demostració
 <img width="856" height="744" alt="image" src="https://github.com/user-attachments/assets/318e9d03-955e-48a1-b4d9-df55a3d6c5c0" />
